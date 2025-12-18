@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Move | Premium Delivery</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0A3F2F',    
+                            light: '#F8F7F2',   
+                            accent: '#A3E635',  
+                            text: '#FFFFFF',
+                            muted: '#9CA3AF',
+                            whatsapp: '#25D366' 
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Custom Scrollbar for products */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #0A3F2F; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-brand-light text-gray-800 antialiased overflow-x-hidden flex flex-col min-h-screen">
+
+    <div id="page-landing" class="w-full flex-grow flex flex-col fade-in">
+        
+        <nav class="bg-brand-dark px-8 py-5 flex justify-between items-center text-white">
+            <div class="flex items-center gap-2">
+                <svg class="w-6 h-6 text-brand-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+                <span class="font-serif text-xl font-bold tracking-wide">Organic Move</span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <a href="#" class="hover:text-white transition">Our Farms</a>
+                <a href="#" class="hover:text-white transition">Seasonal Box</a>
+            </div>
+
+            <button onclick="switchPage('shop')" class="bg-brand-accent text-brand-dark px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition shadow-lg">
+                Order Now
+            </button>
+        </nav>
+
+        <header class="bg-brand-dark text-white relative overflow-hidden pb-20 flex-grow">
+            <div class="max-w-7xl mx-auto px-8 pt-16 grid md:grid-cols-2 gap-12 items-center">
+                
+                <div class="z-10 relative">
+                    <h1 class="font-serif text-5xl md:text-6xl leading-tight mb-6">
+                        Straight from the soil. <br/>
+                        <span class="italic text-gray-200">Delivered crisp.</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg mb-10 max-w-md leading-relaxed">
+                        Taste the difference of vegetables harvested at their peak and moved to your door in hours.
+                    </p>
+                    
+                    <button onclick="switchPage('shop')" class="bg-white text-brand-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-xl flex items-center gap-3">
+                        <span>Start Shopping</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </button>
+                </div>
+
+                <div class="relative h-[400px] w-full">
+                    <img 
+                        src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1000" 
+                        alt="Fresh Box" 
+                        class="absolute inset-0 w-full h-full object-cover rounded-tl-[100px] rounded-br-[40px] shadow-2xl border-4 border-white/5"
+                    />
+                </div>
+            </div>
+        </header>
+
+        <section class="bg-brand-light py-16 px-8 border-t border-gray-200">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+                <div class="text-left md:w-1/4">
+                    <h3 class="font-serif text-3xl font-bold text-brand-dark">The "Move"<br/>Difference</h3>
+                </div>
+                
+                <div class="flex-1 flex flex-col md:flex-row items-center justify-around gap-4 w-full">
+                    <div class="flex flex-col items-center gap-2 text-center">
+                        <div class="w-16 h-16 rounded-full border-2 border-brand-dark flex items-center justify-center bg-green-100 mb-2">
+                            <svg class="w-8 h-8 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        <p class="font-bold text-brand-dark">Harvested</p>
+                        <p class="text-xs text-gray-500">6 AM</p>
+                    </div>
+
+                    <div class="hidden md:block text-brand-dark/30">
+                        <svg class="w-10 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-2 text-center">
+                        <div class="w-16 h-16 rounded-full border-2 border-brand-dark flex items-center justify-center bg-blue-50 mb-2">
+                            <svg class="w-8 h-8 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h12a1 1 0 001-1v-3a1 1 0 00-1-1H9z"/></svg>
+                        </div>
+                        <p class="font-bold text-brand-dark">Moved</p>
+                        <p class="text-xs text-gray-500">11 AM</p>
+                    </div>
+
+                     <div class="hidden md:block text-brand-dark/30">
+                        <svg class="w-10 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+
+                    <div class="flex flex-col items-center gap-2 text-center">
+                        <div class="w-16 h-16 rounded-full border-2 border-brand-dark flex items-center justify-center bg-orange-50 mb-2">
+                            <svg class="w-8 h-8 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                        </div>
+                        <p class="font-bold text-brand-dark">Arrives</p>
+                        <p class="text-xs text-gray-500">5 PM</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="page-shop" class="hidden w-full min-h-screen flex-col bg-brand-light fade-in">
+        
+        <nav class="bg-brand-dark px-6 py-4 flex flex-col md:flex-row justify-between items-center text-white gap-4 sticky top-0 z-50 shadow-md">
+            <div class="flex items-center gap-8 w-full md:w-auto">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="switchPage('landing')">
+                    <svg class="w-6 h-6 text-brand-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+                    <span class="font-serif text-xl font-bold tracking-wide">Organic Move</span>
+                </div>
+                
+                <div class="relative flex-1 md:w-96">
+                    <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <input id="searchInput" onkeydown="handleSearch(event)" type="text" placeholder="Search (e.g. Chickpeas, Honey)..." class="w-full pl-10 pr-4 py-2 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-brand-accent transition">
+                </div>
+            </div>
+            
+            <div class="flex items-center gap-6 text-sm font-medium">
+                <a href="#" class="text-white hidden md:block hover:text-brand-accent" onclick="resetFilters()">Shop All</a>
+                
+                <div class="relative cursor-pointer hover:scale-105 transition" onclick="checkout()">
+                    <svg class="w-6 h-6 text-brand-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    <span id="cartCount" class="absolute -top-2 -right-2 bg-brand-accent text-brand-dark text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+                </div>
+                
+                <button onclick="checkout()" class="bg-brand-accent text-brand-dark px-5 py-1.5 rounded-full font-bold text-sm hover:bg-white transition shadow-md hover:shadow-lg">Order</button>
+            </div>
+        </nav>
+
+        <main class="max-w-7xl mx-auto w-full px-6 py-10 flex flex-col md:flex-row gap-12 flex-grow">
+            
+            <aside class="w-full md:w-64 space-y-8 flex-shrink-0">
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-brand-dark">Categories</h3>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="radio" name="cat" class="w-4 h-4 text-brand-dark focus:ring-brand-dark" checked onclick="resetFilters()"> 
+                            <span class="text-gray-600 group-hover:text-brand-dark">All Products</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="radio" name="cat" class="w-4 h-4 text-brand-dark focus:ring-brand-dark"> 
+                            <span class="text-gray-600 group-hover:text-brand-dark">Vegetables</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer group">
+                            <input type="radio" name="cat" class="w-4 h-4 text-brand-dark focus:ring-brand-dark"> 
+                            <span class="text-gray-600 group-hover:text-brand-dark">Pulses & Grains</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-lg mb-4 text-brand-dark">Price Range</h3>
+                    <input type="range" min="0" max="500" class="mb-2 w-full h-1 bg-gray-300 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm font-bold text-brand-dark">
+                        <span>₹0</span>
+                        <span>₹500+</span>
+                    </div>
+                </div>
+
+                <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" class="w-5 h-5 rounded border-gray-300 text-brand-dark focus:ring-brand-dark" checked>
+                    <span class="text-gray-600">Certified Organic</span>
+                </label>
+            </aside>
+
+            <div class="flex-1">
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=400" alt="Spinach" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">Organic Spinach</h4>
+                        <p class="text-gray-400 text-xs mb-3">1 bunch</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹40</span>
+                            <button onclick="addToCart('Organic Spinach')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?auto=format&fit=crop&q=80&w=400" alt="Carrots" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">Heirloom Carrots</h4>
+                        <p class="text-gray-400 text-xs mb-3">500g</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹60</span>
+                            <button onclick="addToCart('Heirloom Carrots')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&q=80&w=400" alt="Tomatoes" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">Roma Tomatoes</h4>
+                        <p class="text-gray-400 text-xs mb-3">1 kg</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹50</span>
+                            <button onclick="addToCart('Roma Tomatoes')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1568584711075-3d021a7c3ca3?auto=format&fit=crop&q=80&w=400" alt="Cauliflower" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">Fresh Cauliflower</h4>
+                        <p class="text-gray-400 text-xs mb-3">1 piece</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹45</span>
+                            <button onclick="addToCart('Fresh Cauliflower')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://cdn.shopaccino.com/edible-smart/products/toor-dal-min-scaled-740285_l.jpg?v=644?param=1" alt="Dal" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">Toor Dal (Organic)</h4>
+                        <p class="text-gray-400 text-xs mb-3">1 kg</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹140</span>
+                            <button onclick="addToCart('Toor Dal')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://minalagriexport.com/upload/producttype/white-chick-peas-1664001826.png" alt="Chickpeas" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">White Chickpeas</h4>
+                        <p class="text-gray-400 text-xs mb-3">1 kg</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹110</span>
+                            <button onclick="addToCart('White Chickpeas')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Edx-Jx5VItCHZdj5h7cL0jkArui2BTu5xA&s" alt="Rajma" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">Red Kidney Beans</h4>
+                        <p class="text-gray-400 text-xs mb-3">1 kg</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹160</span>
+                            <button onclick="addToCart('Kidney Beans')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
+                        <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
+                            <img src="https://5.imimg.com/data5/ANDROID/Default/2020/12/HO/RM/RL/9140838/product-jpeg-500x500.jpg" alt="Honey" class="object-cover h-full w-full hover:scale-110 transition duration-500">
+                        </div>
+                        <h4 class="font-bold text-brand-dark text-lg leading-tight mb-1 product-title">Wild Forest Honey</h4>
+                        <p class="text-gray-400 text-xs mb-3">500g Jar</p>
+                        <div class="flex flex-col gap-2">
+                            <span class="font-bold text-xl text-gray-800">₹350</span>
+                            <button onclick="addToCart('Wild Forest Honey')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+        
+        <footer class="bg-brand-light py-8 px-6 text-sm text-brand-dark font-medium border-t border-gray-200">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="space-x-6 text-gray-600">
+                    <span class="font-bold text-brand-dark">Organic Move</span>
+                    <a href="#" class="hover:text-brand-dark transition">Our Farms</a>
+                    <a href="#" class="hover:text-brand-dark transition">Vegetables</a>
+                    <a href="#" class="hover:text-brand-dark transition">Pulses</a>
+                </div>
+
+                <div class="flex items-center gap-6">
+                    <span class="text-gray-400">© 2024 Organic Move</span>
+                    
+                    <button onclick="openWhatsApp()" class="bg-brand-whatsapp text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition shadow-lg flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        Chat on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // --- 1. STATE MANAGEMENT ---
+        let cart = [];
+
+        // --- 2. PAGE NAVIGATION ---
+        function switchPage(pageName) {
+            const landing = document.getElementById('page-landing');
+            const shop = document.getElementById('page-shop');
+            
+            if (pageName === 'shop') {
+                landing.classList.add('hidden');
+                landing.classList.remove('flex'); // Remove flex when hidden
+                
+                shop.classList.remove('hidden');
+                shop.classList.add('flex');
+                window.scrollTo(0,0);
+            } else {
+                shop.classList.add('hidden');
+                shop.classList.remove('flex');
+                
+                landing.classList.remove('hidden');
+                landing.classList.add('flex'); // Add flex back
+                window.scrollTo(0,0);
+            }
+        }
+
+        // --- 3. CART FUNCTIONS ---
+        function addToCart(itemName) {
+            cart.push(itemName);
+            document.getElementById('cartCount').innerText = cart.length;
+            
+            // Notification
+            const btn = event.target;
+            const originalText = btn.innerText;
+            btn.innerText = "Added!";
+            btn.classList.add('bg-brand-accent', 'text-brand-dark');
+            btn.classList.remove('bg-brand-dark', 'text-white');
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('bg-brand-accent', 'text-brand-dark');
+                btn.classList.add('bg-brand-dark', 'text-white');
+            }, 1000);
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty! Add some fresh veggies first.");
+                return;
+            }
+            
+            // Generate summary
+            let summary = "Order Summary:\n----------------\n";
+            cart.forEach((item, index) => {
+                summary += (index + 1) + ". " + item + "\n";
+            });
+            summary += "\nTotal Items: " + cart.length;
+            summary += "\n\nProceeding to payment gateway...";
+            
+            alert(summary);
+            
+            // Reset cart (simulation)
+            cart = [];
+            document.getElementById('cartCount').innerText = 0;
+        }
+
+        // --- 4. WHATSAPP FUNCTION (NEW) ---
+        function openWhatsApp() {
+            // Updated Number: +91 81790 87239
+            // Format: Country Code + Number (No + or spaces)
+            const phoneNumber = "918179087239"; 
+            
+            const message = "Hello Organic Move! I'm interested in ordering fresh vegetables.";
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            window.open(url, '_blank');
+        }
+        
+
+        // --- 5. SEARCH FUNCTIONALITY ---
+        function handleSearch(event) {
+            if (event.key === 'Enter') {
+                const query = document.getElementById('searchInput').value.toLowerCase();
+                const cards = document.querySelectorAll('.product-card');
+                
+                let found = false;
+                cards.forEach(card => {
+                    const title = card.querySelector('.product-title').innerText.toLowerCase();
+                    if (title.includes(query)) {
+                        card.style.display = 'block';
+                        found = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (!found && query !== "") {
+                    alert("No products found for '" + query + "'");
+                    resetFilters();
+                }
+            }
+        }
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = "";
+            const cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => card.style.display = 'block');
+        }
+    </script>
+</body>
+</html>
