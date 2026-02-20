@@ -42,12 +42,19 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #0A3F2F; border-radius: 4px; }
+
+        /* Print Styles for the Bill */
+        @media print {
+            body * { visibility: hidden; }
+            #print-section, #print-section * { visibility: visible; }
+            #print-section { position: absolute; left: 0; top: 0; width: 100%; }
+            .no-print { display: none !important; }
+        }
     </style>
 </head>
 <body class="bg-brand-light text-gray-800 antialiased overflow-x-hidden flex flex-col min-h-screen">
 
     <div id="page-landing" class="w-full flex-grow flex flex-col fade-in">
-        
         <nav class="bg-brand-dark px-8 py-5 flex justify-between items-center text-white">
             <div class="flex items-center gap-2">
                 <svg class="w-6 h-6 text-brand-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
@@ -66,7 +73,6 @@
 
         <header class="bg-brand-dark text-white relative overflow-hidden pb-20 flex-grow">
             <div class="max-w-7xl mx-auto px-8 pt-16 grid md:grid-cols-2 gap-12 items-center">
-                
                 <div class="z-10 relative">
                     <h1 class="font-serif text-5xl md:text-6xl leading-tight mb-6">
                         Straight from the soil. <br/>
@@ -83,11 +89,7 @@
                 </div>
 
                 <div class="relative h-[400px] w-full">
-                    <img 
-                        src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1000" 
-                        alt="Fresh Box" 
-                        class="absolute inset-0 w-full h-full object-cover rounded-tl-[100px] rounded-br-[40px] shadow-2xl border-4 border-white/5"
-                    />
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1000" alt="Fresh Box" class="absolute inset-0 w-full h-full object-cover rounded-tl-[100px] rounded-br-[40px] shadow-2xl border-4 border-white/5"/>
                 </div>
             </div>
         </header>
@@ -136,7 +138,6 @@
     </div>
 
     <div id="page-shop" class="hidden w-full min-h-screen flex-col bg-brand-light fade-in">
-        
         <nav class="bg-brand-dark px-6 py-4 flex flex-col md:flex-row justify-between items-center text-white gap-4 sticky top-0 z-50 shadow-md">
             <div class="flex items-center gap-8 w-full md:w-auto">
                 <div class="flex items-center gap-2 cursor-pointer" onclick="switchPage('landing')">
@@ -163,7 +164,6 @@
         </nav>
 
         <main class="max-w-7xl mx-auto w-full px-6 py-10 flex flex-col md:flex-row gap-12 flex-grow">
-            
             <aside class="w-full md:w-64 space-y-8 flex-shrink-0">
                 <div>
                     <h3 class="font-bold text-lg mb-4 text-brand-dark">Categories</h3>
@@ -200,7 +200,6 @@
 
             <div class="flex-1">
                 <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    
                     <div class="product-card bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition duration-300 border border-transparent hover:border-gray-200">
                         <div class="h-40 bg-gray-50 rounded-lg mb-4 flex items-center justify-center overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=400" alt="Spinach" class="object-cover h-full w-full hover:scale-110 transition duration-500">
@@ -296,14 +295,12 @@
                             <button onclick="addToCart('Wild Forest Honey')" class="w-full bg-brand-dark text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm active:scale-95">Add to Cart</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </main>
         
         <footer class="bg-brand-light py-8 px-6 text-sm text-brand-dark font-medium border-t border-gray-200">
             <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                
                 <div class="space-x-6 text-gray-600">
                     <span class="font-bold text-brand-dark">Organic Move</span>
                     <a href="#" class="hover:text-brand-dark transition">Our Farms</a>
@@ -313,7 +310,6 @@
 
                 <div class="flex items-center gap-6">
                     <span class="text-gray-400">© 2024 Organic Move</span>
-                    
                     <button onclick="openWhatsApp()" class="bg-brand-whatsapp text-white px-6 py-2 rounded-full font-bold hover:bg-green-600 transition shadow-lg flex items-center gap-2">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                         Chat on WhatsApp
@@ -323,39 +319,81 @@
         </footer>
     </div>
 
+    <div id="page-cart" class="hidden w-full min-h-screen flex-col bg-brand-light fade-in">
+        <nav class="bg-brand-dark px-6 py-4 flex justify-between items-center text-white sticky top-0 z-50 shadow-md no-print">
+            <div class="flex items-center gap-2 cursor-pointer hover:text-brand-accent transition" onclick="switchPage('shop')">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                <span class="font-sans text-lg font-medium">Back to Shop</span>
+            </div>
+            <span class="font-serif text-xl font-bold tracking-wide">Your Cart</span>
+        </nav>
+
+        <main class="max-w-2xl mx-auto w-full px-6 py-10 flex-grow">
+            <div id="print-section" class="bg-white p-8 rounded-xl shadow-sm border border-gray-200">
+                <div class="text-center mb-8 border-b border-gray-100 pb-6">
+                    <h2 class="font-serif text-3xl font-bold text-brand-dark">Organic Move</h2>
+                    <p class="text-gray-500 text-sm mt-1">Premium Delivery Receipt</p>
+                    <p id="bill-date" class="text-gray-400 text-xs mt-1"></p>
+                </div>
+
+                <div id="cart-items-container" class="space-y-3 mb-8">
+                    </div>
+
+                <div class="flex justify-between items-center font-bold text-xl text-brand-dark border-t border-gray-200 pt-6">
+                    <span>Total Amount:</span>
+                    <span id="cart-total">₹0</span>
+                </div>
+            </div>
+
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center no-print">
+                <button onclick="window.print()" class="bg-gray-200 text-brand-dark px-6 py-3 rounded-full font-bold hover:bg-gray-300 transition shadow flex items-center justify-center gap-2">
+                    Print Bill
+                </button>
+                <button onclick="exportToExcel()" class="bg-blue-100 text-blue-800 px-6 py-3 rounded-full font-bold hover:bg-blue-200 transition shadow flex items-center justify-center gap-2">
+                    Export to Excel
+                </button>
+            </div>
+        </main>
+    </div>
+
     <script>
         // --- 1. STATE MANAGEMENT ---
-        let cart = [];
+        let cart = []; // Now stores objects: { name, price }
 
         // --- 2. PAGE NAVIGATION ---
         function switchPage(pageName) {
             const landing = document.getElementById('page-landing');
             const shop = document.getElementById('page-shop');
+            const cartPage = document.getElementById('page-cart');
             
+            // Hide all pages safely
+            if(landing) { landing.classList.add('hidden'); landing.classList.remove('flex'); }
+            if(shop) { shop.classList.add('hidden'); shop.classList.remove('flex'); }
+            if(cartPage) { cartPage.classList.add('hidden'); cartPage.classList.remove('flex'); }
+            
+            // Show the requested page
             if (pageName === 'shop') {
-                landing.classList.add('hidden');
-                landing.classList.remove('flex'); // Remove flex when hidden
-                
-                shop.classList.remove('hidden');
-                shop.classList.add('flex');
-                window.scrollTo(0,0);
+                shop.classList.remove('hidden'); shop.classList.add('flex');
+            } else if (pageName === 'cart') {
+                cartPage.classList.remove('hidden'); cartPage.classList.add('flex');
+                renderCart(); // Generate the bill when opening the page
             } else {
-                shop.classList.add('hidden');
-                shop.classList.remove('flex');
-                
-                landing.classList.remove('hidden');
-                landing.classList.add('flex'); // Add flex back
-                window.scrollTo(0,0);
+                landing.classList.remove('hidden'); landing.classList.add('flex');
             }
+            window.scrollTo(0,0);
         }
 
-        // --- 3. CART FUNCTIONS ---
+        // --- 3. CART & BILLING FUNCTIONS ---
         function addToCart(itemName) {
-            cart.push(itemName);
+            const btn = event.target;
+            // UI trick: Look at the text inside the span right above the button to get the price
+            const priceText = btn.previousElementSibling.innerText; 
+            const itemPrice = parseInt(priceText.replace(/[^0-9]/g, '')); // Strip out the ₹ symbol
+            
+            cart.push({ name: itemName, price: itemPrice });
             document.getElementById('cartCount').innerText = cart.length;
             
-            // Notification
-            const btn = event.target;
+            // Notification animation
             const originalText = btn.innerText;
             btn.innerText = "Added!";
             btn.classList.add('bg-brand-accent', 'text-brand-dark');
@@ -373,36 +411,74 @@
                 alert("Your cart is empty! Add some fresh veggies first.");
                 return;
             }
-            
-            // Generate summary
-            let summary = "Order Summary:\n----------------\n";
-            cart.forEach((item, index) => {
-                summary += (index + 1) + ". " + item + "\n";
-            });
-            summary += "\nTotal Items: " + cart.length;
-            summary += "\n\nProceeding to payment gateway...";
-            
-            alert(summary);
-            
-            // Reset cart (simulation)
-            cart = [];
-            document.getElementById('cartCount').innerText = 0;
+            switchPage('cart'); // Redirect to the new cart page
         }
 
-        // --- 4. WHATSAPP FUNCTION (NEW) ---
-        function openWhatsApp() {
-            // Updated Number: +91 81790 87239
-            // Format: Country Code + Number (No + or spaces)
-            const phoneNumber = "918179087239"; 
+        function renderCart() {
+            const container = document.getElementById('cart-items-container');
+            const totalEl = document.getElementById('cart-total');
+            document.getElementById('bill-date').innerText = new Date().toLocaleString();
             
+            container.innerHTML = '';
+            let total = 0;
+            let itemCounts = {};
+
+            // Consolidate duplicates (e.g., clicking Spinach twice = x2)
+            cart.forEach(item => {
+                if(itemCounts[item.name]) {
+                    itemCounts[item.name].quantity += 1;
+                } else {
+                    itemCounts[item.name] = { price: item.price, quantity: 1 };
+                }
+                total += item.price;
+            });
+
+            // Draw the bill
+            for (const [name, data] of Object.entries(itemCounts)) {
+                const itemRow = document.createElement('div');
+                itemRow.className = "flex justify-between items-center text-gray-700";
+                itemRow.innerHTML = `
+                    <div>
+                        <span class="font-medium">${name}</span>
+                        <span class="text-sm text-gray-400 ml-2">x${data.quantity}</span>
+                    </div>
+                    <span class="font-medium">₹${data.price * data.quantity}</span>
+                `;
+                container.appendChild(itemRow);
+            }
+
+            totalEl.innerText = `₹${total}`;
+        }
+
+        // --- 4. EXCEL EXPORT ---
+        function exportToExcel() {
+            if (cart.length === 0) return;
+            
+            // Create a simple CSV format string
+            let csvContent = "data:text/csv;charset=utf-8,Item Name,Price (INR)\r\n";
+            cart.forEach(item => { csvContent += `${item.name},${item.price}\r\n`; });
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            csvContent += `\r\nTotal,${total}`;
+
+            // Trigger browser download
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "Organic_Move_Order.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // --- 5. WHATSAPP FUNCTION ---
+        function openWhatsApp() {
+            const phoneNumber = "918179087239"; 
             const message = "Hello Organic Move! I'm interested in ordering fresh vegetables.";
             const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-            
             window.open(url, '_blank');
         }
-        
 
-        // --- 5. SEARCH FUNCTIONALITY ---
+        // --- 6. SEARCH FUNCTIONALITY ---
         function handleSearch(event) {
             if (event.key === 'Enter') {
                 const query = document.getElementById('searchInput').value.toLowerCase();
